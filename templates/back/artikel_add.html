@@ -1,0 +1,40 @@
+{% extends 'back/base.html' %}
+
+{% block content %}
+<br><br>
+<br><br>
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"> Nama </label>
+          <input type="text" class="form-control" name="nama" value="{{ get_artikel.nama }}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Kategori</label>
+            <select name="kategori" id="1" class="form-control" value="{{ get_artikel.kategori }}">
+                {% for kategori in kategori %}
+                {% if get_artikel.kategori == kategori %}
+                <option value="{{ kategori.nama }}"selected="selected">{{ kategori.nama }}</option>
+                {% else %}
+                <option value="{{ kategori.nama }}">{{ kategori.nama }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Judul</label>
+          <input type="text" class="form-control"name="judul"value="{{ get_artikel.body }}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Body</label>
+            <textarea type="text" class="form-control" name="body">{{ get_artikel.body }}</textarea>
+          </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Date</label>
+            <input type="date" class="form-control" name="date">
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      </div>
+{% endblock content %}
