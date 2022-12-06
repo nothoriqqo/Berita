@@ -22,3 +22,10 @@ def login(request):
         'login' :login,
     }
     return render(request, template_name, context)
+def register(request):
+    template_name = 'front/register.html'
+    context = {
+        'title ' : 'halaman register',
+        'register' :register,
+    }
+    return render(request, template_name, context)

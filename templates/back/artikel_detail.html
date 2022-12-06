@@ -1,51 +1,38 @@
 {% extends 'back/base.html' %}
 
 {% block content %}
-<div class="content">
-    <div class="container-fluid">
+<br><br>
+<br><br>
+<div class="container">
+    <form method="POST">
+      <div class="content">
         <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body table-full-width table-responsive">
-                      <form class="form-horizontal" method="POST">
-                        {% csrf_token %}
-                        <div class="card-header">
-                          <h4 class="card-title">
-                            <center>{{title}}</center>
-                          </h4>
-                        </div>
-  
-                      <div class="card-content">
-                        <div class="form-group">
-                          <label class="col-md-3 control-label"><b style="color:black;">Nama</b></label>
-                          <div class="col-md-15">
-                            <p>{{artikel.nama}}</p>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-md-3 control-label"><b style="color:black;">Judul</b></label>
-                          <div class="col-md-15">
-                           <p>{{artikel.judul}}</p>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-md-3 control-label"><b style="color:black;">Body</b></label>
-                          <div class="col-md-15">
-                            <p>{{artikel.body}}</p>
-                          </div>
-                        </div>                      
-                        <div class="form-group">
-                          <label class="col-md-3 control-label"><b style="color:black;">Kategory</b></label>
-                          <div class="col-md-15">
-                              <p>{{artikel.kategory}}</p>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                </div>
-            </div>
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Data Tables</h4>
+              </div>
+              <div class="card-body">
+                <div class="toolbar">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"> Nama </label>
+          <p>{{ artikel.nama}}</p>
         </div>
-    </div>
-  </div>
-  </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Kategori</label>
+            <p>{{ artikel.kategori}}</p>
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Judul</label>
+          <p>{{ artikel.judul}}</p>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Body</label>
+            <p>{{ artikel.body}}</p>
+          </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Date</label>
+            <p>{{ artikel.date}}</p>
+          </div>
 {% endblock content %}

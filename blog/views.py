@@ -78,12 +78,11 @@ def artikel_detail(request, id):
     template_name = 'back/artikel_detail.html'
     artikel = Artikel.objects.get(id=id)
     context = {
-        title : 'Lihat detail artikel'
-        
+        'title' : 'DETAIL ARTIKEL',
+        'artikel' : artikel,
     }
+    return render(request, template_name, context)
 
 def artikel_delete (request, id):
     Artikel.objects.get(id=id).delete()
-    if request.method == 'POST':
-        messages.success(request, "Sukses Menghapus Artikel." )
-        return redirect(artikel_list)
+    return redirect(artikel_list)
