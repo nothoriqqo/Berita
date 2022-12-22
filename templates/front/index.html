@@ -4,51 +4,51 @@
 {% block content %}
 <div class="wrapper">
     <div class="page-header header-filter">
-      <div class="page-header-image" data-parallax="true" style="background-image: url({% static 'front/img/claudia-ramirez.jpg' %});"></div>
+      <div class="page-header-image" data-parallax="true" style="background-image: url({% static 'front/img/indo.jpg' %});"></div>
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h1 class="title">My Artikel</h1>
+            <h1 class="title">RNEWS </h1>
             <div class="author">
-              <img src="{% static 'front/img/DSC_2441.jpg' %}" alt="..." class="avatar img-raised">
             </div>
-            <br/>
-            <h4 class="description">Thoriq Ikhwan Alfawas</h4>
+            
           </div>
         </div>
       </div>
     </div>
+
+    {% for a in api_kategori_berita  %}
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <h6 class="category">{{a.publishedAt}}</h6>
+            <h3 class="title">{{a.title}}</h3>
+            <img class="img img-raised" src="{{a.urlToImage}}">
+            <p>{{a.description|safe|truncatechars:200}}</p>
+            <a class="btn btn-danger btn-round btn-sm" href="{{a.url}}"> Read More </a>
+            
+        </div>
+      </div>
+    </div>
+   
+{% endfor %}
+
+
     {% for a in artikel  %}
-    
-    
     <div class="section">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
             <h6 class="category">{{a.date}}</h6>
             <h3 class="title">{{a.judul}}</h3>
-            <p>{{a.body}}</p>
+            <p>{{a.body|safe|truncatechars:200}}</p>
             
+            <a class="btn btn-danger btn-round btn-sm" href="{% url 'detail_artikel' a.id %}"> Read More </a>
         </div>
       </div>
     </div>
-    <div class="slider col-md-8 ml-auto mr-auto">
-      <div>
-        <img src="{% static 'front/img/mark-harrison.jpg' %}" height="500" width="450">
-      </div>
-      <div>
-        <img src="{% static 'front/img/steven-roe.jpg' %}" height="500" width="450">
-      </div>
-      <div>
-        <img src="{% static 'front/img/rezaul-karim.jpg' %}" height="500" width="450">
-      </div>
-      <div>
-        <img src="{% static 'front/img/pawel-nolbert.jpg' %}" height="500" width="450">
-      </div>
-      <div>
-        <img src="{% static 'front/img/serge-kutuzov.jpg' %}" height="500" width="450">
-      </div>
-    </div>
+   
 {% endfor %}
     <div class="section section-blog-info">
       <div class="container">
@@ -56,177 +56,12 @@
           <div class="col-md-8 ml-auto mr-auto">
             <div class="row">
               <div class="col-md-10">
-                <div class="blog-tags">
-                  Tags:&nbsp;
-                  <span class="badge badge-primary">Photography</span>
-                  <span class="badge badge-primary">Stories</span>
-                  <span class="badge badge-primary">Castle</span>
-                </div>
-              </div>
+              
               <hr />
              
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section section-comments">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 ml-auto mr-auto">
-            <div class="media-area">
-              <h3 class="title text-center">3 Comments</h3>
-              <div class="media">
-                <a class="pull-left" href="#pablo">
-                  <div class="avatar">
-                    <img class="media-object img-raised" src="{% static 'front/img/james.jpg' %}" alt="..." />
-                  </div>
-                </a>
-                <div class="media-body">
-                  <h5 class="media-heading">Tina Andrew
-                    <small class="text-muted">&middot; 7 minutes ago</small>
-                  </h5>
-                  <p>Chance too good. God level bars. I'm so proud of @LifeOfDesiigner #1 song in the country. Panda! Don't be scared of the truth because we need to restart the human foundation in truth I stand with the most humility. We are so blessed!</p>
-                  <p>All praises and blessings to the families of people who never gave up on dreams. Don't forget, You're Awesome!</p>
-                  <div class="media-footer">
-                    <a href="#pablo" class="btn btn-primary btn-simple btn-sm pull-right" rel="tooltip" title="Reply to Comment">
-                      <i class="tim-icons icon-send"></i> Reply
-                    </a>
-                    <a href="#pablo" class="btn btn-danger btn-simple btn-sm pull-right">
-                      <i class="tim-icons icon-heart-2"></i> 243
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="media">
-                <a class="pull-left" href="#pablo">
-                  <div class="avatar">
-                    <img class="media-object img-raised" alt="Tim Picture" src="{% static 'front/img/michael.jpg' % }">
-                  </div>
-                </a>
-                <div class="media-body">
-                  <h5 class="media-heading">John Camber
-                    <small class="text-muted">&middot; Yesterday</small>
-                  </h5>
-                  <p>Hello guys, nice to have you on the platform! There will be a lot of great stuff coming soon. We will keep you posted for the latest news.</p>
-                  <p> Don't forget, You're Awesome!</p>
-                  <div class="media-footer">
-                    <a href="#pablo" class="btn btn-primary btn-simple btn-sm pull-right" rel="tooltip" title="Reply to Comment">
-                      <i class="tim-icons icon-send"></i> Reply
-                    </a>
-                    <a href="#pablo" class="btn btn-danger btn-simple btn-sm pull-right">
-                      <i class="tim-icons icon-heart-2"></i> 243
-                    </a>
-                  </div>
-                  <div class="media">
-                    <a class="pull-left" href="#pablo">
-                      <div class="avatar">
-                        <img class="media-object img-raised" alt="64x64" src="{% static 'front/img/julie.jpg' %}">
-                      </div>
-                    </a>
-                    <div class="media-body">
-                      <h5 class="media-heading">Tina Andrew
-                        <small class="text-muted">· 2 Days Ago</small>
-                      </h5>
-                      <p>Hello guys, nice to have you on the platform! There will be a lot of great stuff coming soon. We will keep you posted for the latest news.</p>
-                      <p> Don't forget, You're Awesome!</p>
-                      <div class="media-footer">
-                        <a href="#pablo" class="btn btn-primary btn-simple btn-sm pull-right" rel="tooltip" title="Reply to Comment">
-                          <i class="tim-icons icon-send"></i> Reply
-                        </a>
-                        <a href="#pablo" class="btn btn-danger btn-simple btn-sm pull-right">
-                          <i class="tim-icons icon-heart-2"></i> 243
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h3 class="title text-center">Post your comment</h3>
-            <div class="media media-post">
-              <a class="pull-left author" href="#pablo">
-                <div class="avatar">
-                  <img class="media-object img-raised" alt="64x64" src="{% static 'front/img/olivia.jpg' %}">
-                </div>
-              </a>
-              <div class="media-body">
-                <textarea class="form-control" placeholder="Write a nice reply or go home..." rows="4"></textarea>
-                <div class="media-footer">
-                  <a href="#pablo" class="btn btn-primary pull-right"> Reply </a>
-                </div>
-              </div>
-            </div>
-            <!-- end media-post -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="col-md-12">
-          <h2 class="title text-center">Related Stories</h2>
-          <br />
-          <div class="blogs-1">
-            <div class="row">
-              <div class="col-md-12 ml-auto mr-auto">
-                <div class="card card-blog card-plain blog-horizontal">
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <div class="card-image">
-                        <a href="#pablo">
-                          <img class="img rounded" src="{% static 'front/img/trae-gould.jpg' %}" />
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="card-body">
-                        <h3 class="card-title">
-                          <a href="#pablo">MateLabs mixes machine learning with IFTTT</a>
-                        </h3>
-                        <p class="card-description">
-                          If you’ve ever wanted to train a machine learning model and integrate it with IFTTT, you now can with a new offering from MateLabs. MateVerse, a platform where novices can spin out machine...If you’ve ever wanted to train a machine learning model and integrate it with IFTTT, you now can with a new offering from MateLabs. MateVerse, a platform where novices can spin out machine...
-                          <a href="#pablo"> Read More </a>
-                        </p>
-                        <div class="author">
-                          <img src="{% static 'front/img/james.jpg' %}" alt="..." class="avatar img-raised">
-                          <div class="text">
-                            <span class="name">Tom Hanks</span>
-                            <div class="meta">Drawn on 23 Jan</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card card-blog card-plain blog-horizontal">
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <div class="card-image">
-                        <a href="#pablo">
-                          <img class="img rounded" src="{% static 'front/img/mark-harrison.jpg' %}" />
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="card-body">
-                        <h3 class="card-title">
-                          <a href="#pablo">US venture investment ticks up in Q2 2017</a>
-                        </h3>
-                        <p class="card-description">
-                          Venture investment in U.S. startups rose sequentially in the second quarter of 2017, boosted by large, late-stage financings and a few outsized early-stage rounds in tech and healthcare..enture investment in U.S. startups rose sequentially in the second quarter of 2017, boosted by large, late-stage financings and a few outsized early-stage rounds in tech and healthcare..
-                          <a href="#pablo"> Read More </a>
-                        </p>
-                        <div class="author">
-                          <img src="{% static 'front/img/michael.jpg' %}" alt="..." class="avatar img-raised">
-                          <div class="text">
-                            <span class="name">Tom Hanks</span>
-                            <div class="meta">Drawn on 23 Jan</div>
-                          </div>
-                        </div>
+
+    
+                
                       </div>
                     </div>
                   </div>
@@ -241,54 +76,22 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-            <h1 class="title">THRQ•</h1>
+            <h1 class="title">Rnews•</h1>
           </div>
           <div class="col-md-3 col-6">
             <ul class="nav">
               <li class="nav-item">
-                <a href="../index.html" class="nav-link">
+                <a href="{% url 'index' %}" class="nav-link">
                   Home
                 </a>
               </li>
+            
               <li class="nav-item">
-                <a href="../examples/landing-page.html" class="nav-link">
-                  Landing
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../examples/register-page.html" class="nav-link">
-                  Register
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../examples/profile-page.html" class="nav-link">
-                  Profile
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-3 col-6">
-            <ul class="nav">
-              <li class="nav-item">
-                <a href="https://creative-tim.com/contact-us?ref=blkdsp-footer" class="nav-link">
-                  Contact Us
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="https://creative-tim.com/about-us?ref=blkdsp-footer" class="nav-link">
+                <a href="{% url 'about' %}" class="nav-link">
                   About Us
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="http://creative-tim.com/blog?ref=blkdsp-footer" class="nav-link">
-                  Blog
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="https://opensource.org/licenses/MIT?ref=blkdsp-footer" class="nav-link">
-                  License
-                </a>
-              </li>
+              
             </ul>
           </div>
           <div class="col-md-3">

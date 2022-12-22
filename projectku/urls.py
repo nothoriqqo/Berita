@@ -9,9 +9,16 @@ from django.conf.urls import handler400, handler500
 from . views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
     path('dashboard/', include('blog.urls')),
+    
+    path('artikel/<int:id>/detail/', detail_artikel, name='detail_artikel'),
+    
+    path('', index, name='index'),
     path('about/',about, name='about'),
+    
     path('login/',login, name='login'),
-    path('register/',register, name='register'),
+    path('logout/',logout_view, name='logout'),
+
+    path('ckeditor/', include('ckeditor_uploader.urls'))
+
 ]

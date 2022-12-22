@@ -8,3 +8,4 @@ class ArtikelAdmin(admin.ModelAdmin):
 
 admin.site.register(Kategori)
 admin.site.register(Artikel, ArtikelAdmin)
+admin.site.register(Berita)

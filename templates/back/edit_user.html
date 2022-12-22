@@ -1,0 +1,29 @@
+{% extends 'back/base.html' %}
+
+
+{% block content %}
+<br><br>
+<br><br>
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"> Username </label>
+          <input type="text" class="form-control" name="username" value="{{ get_user.username }}">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control"name="Password">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="first_name" value="{{ get_user.first_name }}">
+          </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="last_name" value="{{get_user.last_name }}">
+          </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+      </div>
+{% endblock content %}

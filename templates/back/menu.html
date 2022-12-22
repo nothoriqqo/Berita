@@ -16,21 +16,21 @@
         <div class="collapse" id="collapseExample">
           <ul class="nav">
             <li>
-              <a href="#">
+              <a href={% url 'user_detail' request.user.id%}>
                 <span class="sidebar-mini-icon">MP</span>
                 <span class="sidebar-normal">My Profile</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href={% url 'edit_user' request.user.id %}>
                 <span class="sidebar-mini-icon">EP</span>
                 <span class="sidebar-normal">Edit Profile</span>
               </a>
             </li>
             <li>
-              <a href="#">
-                <span class="sidebar-mini-icon">S</span>
-                <span class="sidebar-normal">Settings</span>
+              <a href="{% url 'logout' %}">
+                <span class="sidebar-mini-icon">LO</span>
+                <span class="sidebar-normal">Logout</span>
               </a>
             </li>
           </ul>
@@ -46,11 +46,15 @@
           </p>
         </a>
       </li>
-      <li>
-        <a href="{% url 'table_users' %}">
-          <i class="nc-icon nc-calendar-60"></i>
-          <p>TABLE USERS</p>
-        </a>
-      </li>
     </ul>
+    <ul class="nav">
+      <li>
+      <a href="{% url 'users' %}">
+        <i class="nc-icon nc-single-copy-04"></i>
+        <p>
+          TABLE USERS
+        </p>
+      </a>
+    </li>
+  </ul>
   </div>

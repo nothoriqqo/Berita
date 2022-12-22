@@ -27,7 +27,7 @@
      <div class="container">
        <div class="navbar-translate">
          <a class="navbar-brand" href="https://demos.creative-tim.com/blk-design-system-pro/index.html" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
-           <span>Rnews</span> Thoriq Ikhwan A
+           <span>RNEWS</span>
          </a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-bar bar1"></span>
@@ -41,7 +41,7 @@
              <div class="col-6 collapse-brand">
                <a>
                  THRQ•
-                 <span> Rnews</span>
+                 <span> RNEWS</span>
                </a>
              </div>
              <div class="col-6 collapse-close text-right">
@@ -63,22 +63,19 @@
                  <p>ABOUT</p>
                </a> 
            </li>
+          </li>
            <li class="nav-item">
-             <a class="nav-link btn btn-sm btn-default" href="{% url 'login' %}" target="_blank">
+             <a class="nav-link btn btn-sm btn-default" href="{% url 'login' %}">
                <p>LOGIN</p>
              </a>
            </li>
-           <li class="nav-item">
-            <a class="nav-link btn btn-sm btn-default" href="{% url 'register' %}" target="_blank">
-              <p>REGISTER</p>
-            </a>
-          </li>
+          
           <div class="input-group no-border">
-            <input type="text" value="" class="form-control" placeholder="Search...">
+            <form method="GET" action="{% url 'index' %}">
+            <input type="text" value="" class="form-control" name="search" placeholder="Search...">
+          </form>
             <div class="input-group-append">
-              <div class="input-group-text">
-                <i class="nc-icon nc-zoom-split"></i>
-              </div>
+              
            <!-- <li class="nav-item">
                      <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
                          <i class="fab fa-twitter"></i>
