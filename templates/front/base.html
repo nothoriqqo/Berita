@@ -26,7 +26,7 @@
    <nav class="navbar navbar-expand-lg  fixed-top navbar-transparent " color-on-scroll="300">
      <div class="container">
        <div class="navbar-translate">
-         <a class="navbar-brand" href="https://demos.creative-tim.com/blk-design-system-pro/index.html" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+         <a class="navbar-brand" href="{% url 'index' %}" rel="tooltip" title="HOME" data-placement="bottom" >
            <span>RNEWS</span>
          </a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,7 +74,7 @@
             <form method="GET" action="{% url 'index' %}">
             <input type="text" value="" class="form-control" name="search" placeholder="Search...">
           </form>
-            <div class="input-group-append">
+            
               
            <!-- <li class="nav-item">
                      <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
@@ -187,6 +187,5 @@
        });
    </script>
  </body>
- 
  </html>
  

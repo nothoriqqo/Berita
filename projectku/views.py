@@ -8,7 +8,7 @@ from django.http import HttpResponse
 
 
 
-from blog.models import Artikel
+from blog.models import Artikel, Berita
 
 
 def index(request):
@@ -16,6 +16,7 @@ def index(request):
     kategori_berita = requests.get(url_berita)
     data_kategori_berita = kategori_berita.json()
     api_kategori_berita = data_kategori_berita['articles']
+
 
     
 
