@@ -18,14 +18,13 @@ class Kategori(models.Model):
 class Artikel(models.Model):
     nama = models.CharField(max_length=100, blank=True, null=True)
     judul = models.CharField(max_length=100)
-    body = RichTextField(blank=True, null=True,
-                                config_name='special',
-                                external_plugin_resources=[(
+    body = RichTextUploadingField(blank=True, null=True,
+                                    config_name='special',
+                                    external_plugin_resources=[(
                                     'youtube',
-                                    'static/ckeditor_plugins/youtube/youtube'
+                                    'static/ckeditor_plugins/youtube/youtube',
                                     'plugin.js',
-                                )],
-    )
+                                    )],)
     kategori = models.ForeignKey(Kategori, on_delete=models.CASCADE, blank=True, null=True)
     date = models.DateTimeField(auto_now_add=True)
 

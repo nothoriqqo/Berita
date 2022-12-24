@@ -29,9 +29,10 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'ckeditor_uploader',
-
+    
+    #apps
     'projectku',
-    'blog'
+    'blog',
 ]
 
 # ckeditor config
